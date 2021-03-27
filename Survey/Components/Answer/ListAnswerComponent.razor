@@ -1,0 +1,59 @@
+﻿@using Entity
+@using Business
+
+<h1 class="text-center h-2 mb-3" > Lista de Preguntas <span class="oi oi-list" ></span> </h1>
+<div class="container mb-2">
+    <div class="row mb-3">
+        <div class="col-6 col-sm-6">
+            <a href="#" class="btn btn-success">Crear Usuario...</a>
+        </div>
+        <div class="col-6 col-sm-6">
+            <a href="survey/create" class="btn btn-success">Crear Encuesta...</a>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-sm-6">
+            <a href="category/create" class="btn btn-success">Crear Categoria...</a>
+        </div>
+        <div class="col-6 col-sm-6">
+            <a href="question/create" class="btn btn-success">Crear Pregunta...</a>
+        </div>
+    </div>
+</div>
+<hr />
+<div>
+    <table class="table table-hover table-bordered " >
+        <thead>
+            <tr>
+                <th> Categoria</th>
+                <th> Encuesta</th>
+                <th> Usuario</th>
+                <th> Identificador</th>
+                <th> Respuesta</th>
+                <th> Fecha Creada</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var answer in Answers)
+            {
+                <tr>
+                    <td> @answer.CategoryId </td>
+                    <td> @answer.SurveyId </td>
+                    <td> @answer.UserId </td>
+                    <td> @answer.IdAnswer </td>
+                    <td> @answer.GetAnswer </td>
+                    <td> @answer.CreateAt </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    List<AnswerEntity> Answers = new List<AnswerEntity>();
+
+    protected async override Task OnInitializedAsync()
+    {
+        Answers = B_Answer.AnswersList();
+    }
+}

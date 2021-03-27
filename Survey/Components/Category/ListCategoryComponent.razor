@@ -1,0 +1,41 @@
+﻿@using Entity
+@using Business
+
+
+<h1 class="text-center h-2 mb-3" >Lista De Categoria <span class="oi oi-list" ></span> </h1>
+<a href="question/create" class="btn btn-success mb-3" > Crear Pregunta... </a>
+<hr />
+<div>
+    <table class="table table-hover table-bordered " >
+        <thead>
+            <tr>
+                <th>Referencia</th>
+                <th>Nombre</th>
+                <th>Fecha Creada</th>
+                <th>Referencia Encuesta</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Categories)
+            {
+                <tr>
+                    <td>@category.IdCategory</td>
+                    <td>@category.NameCategory</td>
+                    <td>@category.CreateAt</td>
+                    <td>@category.SurveyId</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+@code {
+    List<CategoryEntity> Categories = new List<CategoryEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Categories = B_Categories.CategoriesList();
+    }
+}

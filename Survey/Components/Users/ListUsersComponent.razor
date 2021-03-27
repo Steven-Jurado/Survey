@@ -1,0 +1,47 @@
+﻿@using Entity
+@using Business
+
+<h1 class="text-center h-2 mb-3 "> Lista de Los Usuarios Ingresados </h1>
+<hr />
+
+<a href="survey/create" class="btn btn-success mb-2" > Crear Encuesta...</a>
+
+<hr />
+<div>
+    <table class="table table-hover table-bordered ">
+        <thead>
+            <tr>
+                <th> Identificador </th>
+                <th> Nombre </th>
+                <th> Apellido </th>
+                <th> Correo  </th>
+                <th> NickName  </th>
+                <th>   </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Users)
+            {
+                <tr>
+                    <td>@user.IdUser</td>
+                    <td>@user.Name</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.NickName</td>
+                    <td> <a href="user/update/@user.IdUser" class="btn btn-danger"> Actualizar </a> </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+@code {
+    List<UserEntity> Users = new List<UserEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Users = B_Users.UsersList();
+    }
+}

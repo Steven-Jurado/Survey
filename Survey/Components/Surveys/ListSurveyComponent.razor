@@ -1,0 +1,44 @@
+﻿
+@using Entity
+@using Business
+
+
+<h1 class="text-center h-2 mb-3" > Lista De Encuestas <span class="oi oi-list" > </span> </h1>
+<hr />
+
+<a href="category/create" class="btn btn-success mb-3" >Crear Categoria... </a>
+
+<div>
+    <table class="table table-hover table-bordered ">
+        <thead>
+            <tr>
+                <th> Identificador </th>
+                <th> Fecha Creada </th>
+                <th> Descripcion </th>
+                <th> Usuario Relecionado </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var survey in Surveys)
+            {
+                <tr>
+                    <td>@survey.IdSuvey</td>
+                    <td>@survey.CreateAt</td>
+                    <td>@survey.Description</td>
+                    <td>@survey.UserId</td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div>
+
+@code {
+    List<SurveyEntity> Surveys = new List<SurveyEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Surveys = B_Surey.SureyList();
+    }
+}

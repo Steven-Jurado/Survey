@@ -1,0 +1,9 @@
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\bin\Debug\netcoreapp3.1\Entity.deps.json
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\bin\Debug\netcoreapp3.1\Entity.dll
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\bin\Debug\netcoreapp3.1\Entity.pdb
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.csprojAssemblyReference.cache
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfoInputs.cache
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.dll
+C:\Users\yenny\Desktop\Portafolio\Asp .net Blazor\Entity\obj\Debug\netcoreapp3.1\Entity.pdb

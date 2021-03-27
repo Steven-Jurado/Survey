@@ -1,0 +1,54 @@
+﻿@using Entity
+@using Business
+
+@inject NavigationManager NavManager
+
+<a href="survey/list" class="btn btn-success mb-1" >Listar Encuestas...</a>
+
+<div class="text-center text-success alert alert-success h-2 ">
+    @message
+</div>
+
+<EditForm Model="OSurvey">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Codigo Unico de Encuesta: </label>
+        <InputText @bind-Value="OSurvey.IdSuvey" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Descripcion: </label>
+        <InputTextArea @bind-Value="OSurvey.Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Encuesta Hecha Por: </label>
+        <InputSelect @bind-Value="OSurvey.UserId" class="form-control">
+            <option value="">Seleccione... </option>
+            @foreach (var user in Users)
+            {
+                <option value="@user.IdUser"> @user.Name</option>
+            }
+        </InputSelect>
+    </div>
+    <input type="button" class="btn btn-success" value="Crear Encuesta" @onclick="SaveSurvey" />
+</EditForm>
+
+@code {
+    private string message = "";
+    SurveyEntity OSurvey = new SurveyEntity();
+    List<UserEntity> Users = new List<UserEntity>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Users = B_Users.UsersList();
+    }
+
+    private void SaveSurvey()
+    {
+
+        OSurvey.CreateAt = DateTime.Now;
+        OSurvey.DateEnd = DateTime.Now;
+        B_Surey.CreateSurey(OSurvey);
+        message = "Encuesta Creada";
+        NavManager.NavigateTo("survey/list");
+    }
+}
