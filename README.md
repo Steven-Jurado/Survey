@@ -14,10 +14,10 @@
 > - Verificar que en la capa DataAccess  hay una carpetar de Migration si hay seguir con el siguiente paso
 > - Abrir la Consola Administracion de Paquetes
 > - Ejecutar **update-database** en la opcion de DataAccess y este comando creara la base de dato en SQLServer
-- Si no tiene la Carpeta de Migration en DataAccess Ejecutar este Comando **Add-Migration [ Nombre ]** y Luego ejecutar **update-database**
+> - Si no tiene la Carpeta de Migration en DataAccess Ejecutar este Comando **Add-Migration [ Nombre ]** y Luego ejecutar **update-database**
 
 > 1. Crear un usuarios
-2. Crear Encuesta
-3. Crear Categoria
-4. Crear Preguntas
-5. Crear Respuesta
+> 2. Crear Encuesta
+> 3. Crear Categoria
+> 4. Crear Preguntas
+> 5. Crear Respuesta
